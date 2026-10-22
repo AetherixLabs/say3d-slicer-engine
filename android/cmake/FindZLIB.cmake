@@ -1,0 +1,12 @@
+# Android: zlib from the NDK sysroot (static libz.a).
+if(NOT TARGET ZLIB::ZLIB)
+  find_library(_ZLIB_A NAMES libz.a REQUIRED)
+  add_library(ZLIB::ZLIB STATIC IMPORTED GLOBAL)
+  set_target_properties(ZLIB::ZLIB PROPERTIES IMPORTED_LOCATION "${_ZLIB_A}")
+endif()
+set(ZLIB_FOUND TRUE)
+set(ZLIB_INCLUDE_DIRS "")
+set(ZLIB_INCLUDE_DIR "")
+set(ZLIB_LIBRARIES ZLIB::ZLIB)
+set(ZLIB_LIBRARY ZLIB::ZLIB)
+set(ZLIB_VERSION_STRING "1.3")

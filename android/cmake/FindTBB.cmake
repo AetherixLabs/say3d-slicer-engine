@@ -1,0 +1,13 @@
+# Android: static oneTBB built by scripts/build-android.sh into deps-install.
+include("${ORCA_ANDROID_PREFIX}/lib/cmake/TBB/TBBConfig.cmake")
+foreach(_TBB_TARGET IN ITEMS TBB::tbb TBB::tbbmalloc TBB::tbbmalloc_proxy)
+  if(TARGET "${_TBB_TARGET}")
+    get_target_property(_TBB_IS_GLOBAL "${_TBB_TARGET}" IMPORTED_GLOBAL)
+    if(NOT _TBB_IS_GLOBAL)
+      set_property(TARGET "${_TBB_TARGET}" PROPERTY IMPORTED_GLOBAL TRUE)
+    endif()
+  endif()
+endforeach()
+set(TBB_FOUND TRUE)
+set(TBB_INCLUDE_DIRS "${ORCA_ANDROID_PREFIX}/include")
+set(TBB_LIBRARIES TBB::tbb)
