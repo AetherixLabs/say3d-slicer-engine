@@ -207,12 +207,42 @@ struct ProjectMeshInput {
     std::vector<ProjectFaceAttributeInput> face_attributes;
 };
 
+// Say3D: settings an object carries of its own, and over heights of it, as
+// OrcaSlicer names them (a Bambu Studio project's per-object settings and
+// layer_config_ranges). Values are kept as JSON and set when the object is built.
+struct ProjectLayerRangeInput {
+    double min_z = 0;
+    double max_z = 0;
+    nlohmann::json settings = nlohmann::json::object();
+};
+
 struct ProjectObjectInput {
     std::string id;
     std::string mesh_id;
     std::string label;
     int extruder_id = 0;
+    nlohmann::json settings = nlohmann::json::object();
+    std::vector<ProjectLayerRangeInput> layer_ranges;
 };
+
+// Say3D: a settings object of known OrcaSlicer keys and scalar values.
+static bool valid_object_settings(const nlohmann::json& settings, const std::string& what, std::string& error) {
+    if (!settings.is_object()) {
+        error = what + " must be an object";
+        return false;
+    }
+    for (const auto& [key, value] : settings.items()) {
+        if (!Slic3r::print_config_def.get(key)) {
+            error = what + " has an unknown setting: " + key;
+            return false;
+        }
+        if (!(value.is_string() || value.is_number() || value.is_boolean())) {
+            error = what + "." + key + " must be a string, number or boolean";
+            return false;
+        }
+    }
+    return true;
+}
 
 struct ProjectInstanceInput {
     std::string id;
@@ -751,7 +781,8 @@ static bool parse_project_manifest(const uint8_t* manifest_data,
             error = "project object must contain id and meshId";
             return false;
         }
-        if (!reject_unknown_keys(object, {"id", "meshId", "label", "extruderId"}, "project object", error))
+        if (!reject_unknown_keys(object, {"id", "meshId", "label", "extruderId", "settings", "layerRanges"},
+                                 "project object", error))
             return false;
         ProjectObjectInput parsed;
         if (!valid_project_id(object.at("id"), parsed.id, "object.id", error)
@@ -784,6 +815,40 @@ static bool parse_project_manifest(const uint8_t* manifest_data,
                 return false;
             }
             parsed.extruder_id = static_cast<int>(extruder_id);
+        }
+        if (object.contains("settings")) {
+            if (!valid_object_settings(object.at("settings"), "object.settings", error))
+                return false;
+            parsed.settings = object.at("settings");
+        }
+        if (object.contains("layerRanges")) {
+            const auto& ranges = object.at("layerRanges");
+            if (!ranges.is_array() || ranges.size() > 64) {
+                error = "object.layerRanges must be an array of at most 64 ranges";
+                return false;
+            }
+            for (const auto& range : ranges) {
+                if (!range.is_object() || !range.contains("minZ") || !range.contains("maxZ")
+                    || !range.at("minZ").is_number() || !range.at("maxZ").is_number()) {
+                    error = "object.layerRanges entries must contain numeric minZ and maxZ";
+                    return false;
+                }
+                if (!reject_unknown_keys(range, {"minZ", "maxZ", "settings"}, "object layer range", error))
+                    return false;
+                ProjectLayerRangeInput layer_range;
+                layer_range.min_z = range.at("minZ").get<double>();
+                layer_range.max_z = range.at("maxZ").get<double>();
+                if (!(layer_range.min_z >= 0) || !(layer_range.max_z > layer_range.min_z)) {
+                    error = "object.layerRanges need 0 <= minZ < maxZ";
+                    return false;
+                }
+                if (range.contains("settings")) {
+                    if (!valid_object_settings(range.at("settings"), "object.layerRanges.settings", error))
+                        return false;
+                    layer_range.settings = range.at("settings");
+                }
+                parsed.layer_ranges.push_back(std::move(layer_range));
+            }
         }
         result.objects.push_back(std::move(parsed));
     }
@@ -2151,6 +2216,22 @@ static oneslicer_status_t build_project_plate_model(
             native_instance->set_transformation(transformation);
             if (object_input->extruder_id > 0)
                 object->config.set("extruder", object_input->extruder_id);
+            // Say3D: the object's own settings and its height ranges.
+            Slic3r::ConfigSubstitutionContext object_substitutions(
+                Slic3r::ForwardCompatibilitySubstitutionRule::Disable);
+            try {
+                for (const auto& [key, value] : object_input->settings.items())
+                    object->config.set_deserialize(key, json_val_to_string(value), object_substitutions);
+                for (const auto& range : object_input->layer_ranges) {
+                    Slic3r::ModelConfig& range_config =
+                        object->layer_config_ranges[Slic3r::t_layer_height_range(range.min_z, range.max_z)];
+                    for (const auto& [key, value] : range.settings.items())
+                        range_config.set_deserialize(key, json_val_to_string(value), object_substitutions);
+                }
+            } catch (const std::exception& e) {
+                error = std::string("project object settings are invalid: ") + e.what();
+                return ONESLICER_ERR_CONFIG;
+            }
         }
     }
 
