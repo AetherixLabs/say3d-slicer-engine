@@ -146,6 +146,8 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--engine", required=True, help="folder with slicer-mt.js and slicer-mt.wasm")
     parser.add_argument("--engine-name", default="OrcaSlicer 2.4.2 (OrcaWasm)")
+    parser.add_argument("--engine-tag", default="wasm-v2.4.2-patch29-multithreaded",
+                        help="the tag of this repository the engine files were built from")
     parser.add_argument("--profiles", required=True, help="OrcaSlicer's resources/profiles")
     parser.add_argument("--version", required=True)
     parser.add_argument("--out", required=True)
@@ -212,7 +214,7 @@ def main() -> None:
         f.write(
             "# Source\n\n"
             "This engine pack is free software under the GNU Affero General Public License v3.0 (LICENSE).\n\n"
-            f"- Engine: {args.engine_name}\n"
+            f"- Engine: {args.engine_name}, built from tag `{args.engine_tag}` of this repository\n"
             "- Complete corresponding source: https://github.com/AetherixLabs/say3d-slicer-engine"
             + (f" (commit {commit})" if commit else "") + "\n"
             "- Based on https://github.com/Hiosdra/OrcaWasm and https://github.com/SoftFever/OrcaSlicer\n")
