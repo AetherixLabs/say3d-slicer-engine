@@ -1,0 +1,120 @@
+name: Build Android
+
+# The same OrcaSlicer engine as build-wasm.yml, as a native arm64-v8a
+# executable (orca-slicer-cli) the Android app runs in its own process.
+# scripts/build-android.sh does the work; this job gives it an NDK, caches
+# the built dependencies, and publishes the binary as a release asset.
+on:
+  workflow_dispatch:
+    inputs:
+      orca_version:
+        description: 'OrcaSlicer tag to build (e.g. v2.4.2)'
+        default: 'v2.4.2'
+        required: true
+  push:
+    branches: [main, master]
+    paths:
+      - 'android/**'
+      - 'bridge/**'
+      - 'overrides/**'
+      - 'patches/**'
+      - 'scripts/build-android.sh'
+      - '.github/workflows/build-android.yml'
+  pull_request:
+    paths:
+      - 'android/**'
+      - 'bridge/**'
+      - 'overrides/**'
+      - 'patches/**'
+      - 'scripts/build-android.sh'
+      - '.github/workflows/build-android.yml'
+
+permissions:
+  contents: write  # release assets
+
+concurrency:
+  group: build-android-${{ github.event_name == 'pull_request' && github.event.pull_request.number || github.ref }}
+
+env:
+  ORCA_VERSION: ${{ github.event.inputs.orca_version || 'v2.4.2' }}
+  NDK_VERSION: 28.2.13676358
+  ANDROID_API: 26
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ninja-build m4 texinfo autoconf automake libtool pkg-config python3 ccache
+
+      - name: Install NDK ${{ env.NDK_VERSION }}
+        run: |
+          yes | "${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager" "ndk;${NDK_VERSION}" > /dev/null
+          echo "ANDROID_NDK=${ANDROID_SDK_ROOT}/ndk/${NDK_VERSION}" >> "$GITHUB_ENV"
+
+      # Dependencies change only with their versions, which live in the build
+      # script: key on it. Each dependency leaves a stamp in deps-install, so a partial cache is safe.
+      - name: Restore dependency cache
+        id: deps
+        uses: actions/cache/restore@v4
+        with:
+          path: build-android/deps-install
+          key: android-deps-${{ env.NDK_VERSION }}-${{ env.ANDROID_API }}-${{ hashFiles('scripts/build-android.sh', 'android/cmake/**') }}
+          restore-keys: |
+            android-deps-${{ env.NDK_VERSION }}-${{ env.ANDROID_API }}-
+
+      - name: Build dependencies
+        run: ./scripts/build-android.sh deps
+
+      - name: Save dependency cache
+        if: steps.deps.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: build-android/deps-install
+          key: android-deps-${{ env.NDK_VERSION }}-${{ env.ANDROID_API }}-${{ hashFiles('scripts/build-android.sh', 'android/cmake/**') }}
+
+      - name: Build engine
+        run: ./scripts/build-android.sh engine
+
+      # No arm64 Android to run it on here: check what the app relies on —
+      # an arm64 PIE that needs only the system's libc, libm and libdl.
+      - name: Check the binary
+        run: |
+          BIN=build-android/out/orca-slicer-cli
+          file "$BIN"
+          file "$BIN" | grep -q 'ARM aarch64'
+          NEEDED=$(readelf -d "$BIN" | awk '/NEEDED/ {gsub(/[\[\]]/, "", $5); print $5}' | sort | tr '\n' ' ')
+          echo "needs: $NEEDED"
+          for lib in $NEEDED; do
+            case "$lib" in libc.so|libm.so|libdl.so) ;; *) echo "::error::unexpected dependency $lib"; exit 1 ;; esac
+          done
+          ls -l "$BIN"
+          mkdir -p android-artifacts
+          cp "$BIN" android-artifacts/orca-slicer-cli-arm64-v8a
+          (cd android-artifacts && sha256sum orca-slicer-cli-arm64-v8a > orca-slicer-cli-arm64-v8a.sha256)
+          cp LICENSE NOTICE.md android-artifacts/ 2>/dev/null || true
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: orca-android-${{ env.ORCA_VERSION }}-arm64-v8a
+          path: android-artifacts/
+
+      # Builds of the main branch (and manual runs) publish an immutable
+      # release the app's fetch-orca-engine.sh can take by URL and SHA-256.
+      - name: Publish release
+        if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          LAST=$(gh release list --repo "$GITHUB_REPOSITORY" --limit 1000 --json tagName \
+            --jq "[.[].tagName | select(startswith(\"android-${ORCA_VERSION}.\")) | ltrimstr(\"android-${ORCA_VERSION}.\") | tonumber] | max // 0")
+          TAG="android-${ORCA_VERSION}.$((LAST + 1))"
+          gh release create "$TAG" android-artifacts/* \
+            --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" \
+            --title "Android engine ${TAG}" \
+            --notes "orca-slicer-cli for arm64-v8a, OrcaSlicer ${ORCA_VERSION}, built from ${GITHUB_SHA}. Run as its own process; see android/cli/main.cpp for the request format."
