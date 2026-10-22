@@ -1,4 +1,4 @@
-# Say3D engine pack protocol (version 1)
+# Say3D engine pack protocol (version 2)
 
 The engine pack is a folder of static files. A host app serves it, loads its page, sends a slice request and receives G-code. The host knows nothing of the engine's insides; the pack knows nothing of the host but this protocol.
 
@@ -48,6 +48,11 @@ The page posts plain objects:
 | `topLayers`, `bottomLayers` | int? | Shell layers |
 | `wallOrder` | string? | `in-out` or `out-in` |
 | `ironing` | bool? | Iron top surfaces |
+| `creator` | object? | Version 2. A Bambu Studio project's settings, by OrcaSlicer key (`{"sparse_infill_pattern": "gyroid", …}`). Only keys of the chosen process profile are used, never printer, filament, bed or G-code keys; the fields above win over them. |
+| `objectSettings` | object? | Version 2. Settings the model carries of its own, as `creator`. |
+| `ranges` | array? | Version 2. `[{ bottom, top, settings }]`: settings over a height of the model, in mm above the plate, as `creator`; `layer_height` among them changes the layer height there. |
+
+A host checks `protocol` in `pack.json` before sending version 2 fields: a version 1 pack ignores them.
 
 The model is stood in the middle of the bed, on it. The G-code always uses relative extrusion (`M83`), as Bambu's start G-code does.
 

@@ -61,6 +61,31 @@
     return o
   }
 
+  // A creator's process settings the host may not hand over: where the
+  // printer, filament and bed come from, and what names a profile.
+  const NOT_PROCESS = /^(print_settings_id|printer_|machine_|filament_|nozzle_|curr_bed_type|default_|compatible_|inherits|from|name|version|setting_id|instantiation|print_compatible_printers|different_settings_to_system|.*_gcode$)/
+  /**
+   * The creator's settings (a Bambu Studio project's, by OrcaSlicer key) that
+   * the chosen process profile also has: process settings only, so the
+   * printer, filament and plate stay the host's.
+   */
+  function creatorProcess(settings, proc) {
+    if (!settings || typeof settings !== 'object') return {}
+    return Object.fromEntries(Object.entries(settings).filter(([k, v]) =>
+      k in proc && !META.has(k) && !NOT_PROCESS.test(k) && (typeof v === 'string' || typeof v === 'number' || typeof v === 'boolean')))
+  }
+  /** Settings of the object's own, and over heights of it, for setObjects. */
+  function objectEntry(request, proc) {
+    const object = { id: 'object-0', meshId: 'mesh-0', extruderId: 0 }
+    const own = creatorProcess(request.objectSettings, proc)
+    if (Object.keys(own).length) object.settings = own
+    const ranges = (Array.isArray(request.ranges) ? request.ranges : [])
+      .filter((r) => r && r.top > r.bottom && r.bottom >= 0)
+      .map((r) => ({ minZ: r.bottom, maxZ: r.top, settings: creatorProcess(r.settings, proc) }))
+    if (ranges.length) object.layerRanges = ranges
+    return object
+  }
+
   /** A binary STL's bounds, to stand it in the middle of the bed. */
   function bounds(stl) {
     const view = new DataView(stl.buffer, stl.byteOffset, stl.byteLength)
@@ -118,12 +143,15 @@
         await session.applyProfile('orca.profile-json', json(profile(machine)))
         await session.applyProfile('orca.profile-json', json(profile(proc)))
         await session.applyProfile('orca.profile-json', json(filamentSlot(filament)))
+        // The creator's process settings over the profile's, the host's choices over both.
+        const creator = creatorProcess(request.creator, proc)
+        if (Object.keys(creator).length) await session.applyProfile('orca.native-json', json(creator))
         await session.applyProfile('orca.native-json', json(overrides(request)))
         await session.setObjects(stl, {
           schemaVersion: '0.7.0',
           plates: [{ id: 'plate-0', label: 'Plate 1', index: 0 }],
           meshes: [{ id: 'mesh-0', format: 'stl', dataRange: { offset: 0, length: stl.length } }],
-          objects: [{ id: 'object-0', meshId: 'mesh-0', extruderId: 0 }],
+          objects: [objectEntry(request, proc)],
           instances: [{ id: 'instance-0', objectId: 'object-0', plateId: 'plate-0', transform: { matrix } }],
           modifierVolumes: [],
         })

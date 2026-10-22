@@ -226,7 +226,7 @@ def main() -> None:
             rel = os.path.relpath(path, out).replace(os.sep, "/")
             files.append({"path": rel, "size": os.path.getsize(path), "sha256": sha256(path)})
     files.sort(key=lambda f: f["path"])
-    manifest = {"format": 1, "version": args.version, "engine": args.engine_name, "protocol": 1, "files": files}
+    manifest = {"format": 1, "version": args.version, "engine": args.engine_name, "protocol": 2, "files": files}
     with open(os.path.join(out, "pack.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=1)
     print(f"pack {args.version}: {len(files)} files, {sum(f['size'] for f in files) / 1048576:.1f} MB")
