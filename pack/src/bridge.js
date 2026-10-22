@@ -63,7 +63,7 @@
 
   // A creator's process settings the host may not hand over: where the
   // printer, filament and bed come from, and what names a profile.
-  const NOT_PROCESS = /^(print_settings_id|printer_|machine_|filament_|nozzle_|curr_bed_type|default_|compatible_|inherits|from|name|version|setting_id|instantiation|print_compatible_printers|different_settings_to_system|.*_gcode$)/
+  const NOT_PROCESS = /^(print_settings_id|printer_|machine_|filament_|nozzle_|curr_bed_type|default_|compatible_|inherits|from|name|version|setting_id|instantiation|print_compatible_printers|different_settings_to_system|post_process|filename_format|.*_gcode$)/
   /**
    * The creator's settings (a Bambu Studio project's, by OrcaSlicer key) that
    * the chosen process profile also has: process settings only, so the
