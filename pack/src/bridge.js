@@ -36,13 +36,20 @@
     .map(([k, v]) => [k, [Array.isArray(v) ? v[0] : v]]))
 
   /** The request's choices over the profiles, as OrcaSlicer names its settings. */
-  function overrides(request) {
-    const o = {
-      curr_bed_type: request.plate || 'Textured PEI Plate',
+  function overrides(request, bambu, proc) {
+    const o = { layer_height: request.layerHeight }
+    if (bambu) {
+      o.curr_bed_type = request.plate || 'Textured PEI Plate'
       // Bambu's start G-code turns on M83, and the profiles leave this to a
       // default that is 0 in this build: absolute E would over-extrude ~20x.
-      use_relative_e_distances: 1,
-      layer_height: request.layerHeight,
+      o.use_relative_e_distances = 1
+    } else {
+      // Left alone this build picks the Cool Plate, 35 °C for PLA: too cold
+      // for the PEI sheets these printers carry.
+      o.curr_bed_type = request.plate || 'High Temp Plate'
+      // A profile that says nothing means OrcaSlicer's own default, relative;
+      // its layer-change G-code (G92 E0) is refused in absolute mode.
+      if (!('use_relative_e_distances' in proc)) o.use_relative_e_distances = 1
     }
     if (request.firstLayerHeight) o.initial_layer_print_height = Math.max(request.firstLayerHeight, request.layerHeight)
     if (request.supports === 'tree') Object.assign(o, { enable_support: 1, support_type: 'tree(auto)' })
@@ -146,7 +153,7 @@
         // The creator's process settings over the profile's, the host's choices over both.
         const creator = creatorProcess(request.creator, proc)
         if (Object.keys(creator).length) await session.applyProfile('orca.native-json', json(creator))
-        await session.applyProfile('orca.native-json', json(overrides(request)))
+        await session.applyProfile('orca.native-json', json(overrides(request, printer.name.startsWith('Bambu Lab'), proc)))
         await session.setObjects(stl, {
           schemaVersion: '0.7.0',
           plates: [{ id: 'plate-0', label: 'Plate 1', index: 0 }],
