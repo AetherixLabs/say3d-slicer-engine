@@ -43,17 +43,30 @@ PRINTERS = {
     "x1": "Bambu Lab X1 0.4 nozzle",
     "x1c": "Bambu Lab X1 Carbon 0.4 nozzle",
     "x1e": "Bambu Lab X1E 0.4 nozzle",
+    "h2d": "Bambu Lab H2D 0.4 nozzle",
+    "mk4s": "Prusa MK4S 0.4 nozzle",
+    "mk4": "Prusa MK4 0.4 nozzle",
+    "coreone": "Prusa CORE One 0.4 nozzle",
+    "miniis": "Prusa MINIIS 0.4 nozzle",
+    "k1": "Creality K1 (0.4 nozzle)",
+    "k1c": "Creality K1C 0.4 nozzle",
+    "k1max": "Creality K1 Max (0.4 nozzle)",
+    "k2plus": "Creality K2 Plus 0.4 nozzle",
+    "ender3v3": "Creality Ender-3 V3 0.4 nozzle",
+    "centauri": "Elegoo Centauri Carbon 0.4 nozzle",
+    "neptune4": "Elegoo Neptune 4 0.4 nozzle",
+    "neptune4pro": "Elegoo Neptune 4 Pro 0.4 nozzle",
 }
 
 # The app's material ids: filament_type, then the profiles to prefer, best first.
 MATERIALS = {
-    "pla": ("PLA", ("Generic PLA", "Bambu PLA Basic")),
-    "petg": ("PETG", ("Generic PETG", "Bambu PETG Basic")),
+    "pla": ("PLA", ("Generic PLA", "Bambu PLA Basic", "Prusa Generic PLA", "Creality Generic PLA")),
+    "petg": ("PETG", ("Generic PETG", "Bambu PETG Basic", "Prusa Generic PETG", "Creality Generic PETG", "Elegoo PETG")),
     "petg-hf": ("PETG", ("Generic PETG HF", "Bambu PETG HF")),
     "pla-silk": ("PLA", ("Generic PLA Silk", "Bambu PLA Silk")),
-    "abs": ("ABS", ("Generic ABS", "Bambu ABS")),
-    "asa": ("ASA", ("Generic ASA", "Bambu ASA")),
-    "tpu": ("TPU", ("Generic TPU", "Bambu TPU 95A")),
+    "abs": ("ABS", ("Generic ABS", "Bambu ABS", "Prusa Generic ABS", "Creality Generic ABS")),
+    "asa": ("ASA", ("Generic ASA", "Bambu ASA", "Prusa Generic ASA", "Creality Generic ASA")),
+    "tpu": ("TPU", ("Generic TPU", "Bambu TPU 95A", "Prusa Generic TPU", "Creality Generic TPU")),
 }
 
 # Layer heights the pack carries, and words to prefer in a process's name.
@@ -65,6 +78,9 @@ HEIGHTS = {
     "0.24": ("Draft",),
     "0.28": ("Extra Draft",),
 }
+
+# Other makers' steps: Prusa's 0.20 sits between 0.15 and 0.25.
+OTHER_HEIGHTS = {"0.10": ("DETAIL",), "0.15": ("SPEED", "STRUCTURAL"), "0.25": ("SPEED",), "0.30": ("DRAFT",)}
 
 POLYFILL = ("if (typeof SharedArrayBuffer === 'undefined') self.SharedArrayBuffer = "
             "new WebAssembly.Memory({ initial: 1, maximum: 1, shared: true }).buffer.constructor;\n")
@@ -104,13 +120,21 @@ def first(value):
 
 
 def usable(flat: dict, machine: str) -> bool:
-    return flat.get("instantiation") == "true" and machine in (flat.get("compatible_printers") or [])
+    if flat.get("instantiation") != "true":
+        return False
+    if machine in (flat.get("compatible_printers") or []):
+        return True
+    # Prusa's newer profiles name their printer by a condition, and in the name:
+    # "0.20mm SPEED @MK4S 0.4" for "Prusa MK4S 0.4 nozzle".
+    tail = machine.removeprefix("Prusa ").removesuffix(" nozzle")
+    return machine.startswith("Prusa ") and bool(flat.get("compatible_printers_condition")) \
+        and str(flat.get("name", "")).endswith(f"@{tail}")
 
 
 def pick_process(machine: str, flats: dict[str, dict], height: str, words) -> str | None:
     found = [n for n, p in flats.items() if p.get("type") == "process" and usable(p, machine)
              and abs(float(first(p.get("layer_height", 0)) or 0) - float(height)) < 1e-6
-             and "Strength" not in n]
+             and "Strength" not in n and "SOLUBLE" not in n]
     if not found:
         return None
     return min(found, key=lambda n: (next((i for i, w in enumerate(words) if w in n), len(words)), n))
@@ -195,7 +219,8 @@ def main() -> None:
 
         entry = {"name": machine_name, "machine": write("machine.json", machine), "bedCentre": bed_centre(machine),
                  "processes": {}, "filaments": {}}
-        for height, words in HEIGHTS.items():
+        heights = HEIGHTS if machine_name.startswith("Bambu") else {**HEIGHTS, **OTHER_HEIGHTS}
+        for height, words in heights.items():
             chosen = pick_process(machine_name, flats, height, words)
             if chosen:
                 entry["processes"][height] = write(f"process-{height}.json", flats[chosen])
