@@ -185,7 +185,8 @@ def main() -> None:
     with open(os.path.join(args.engine, "slicer-mt.js"), encoding="utf-8") as f:
         engine_js = f.read()
     with open(os.path.join(out, "slicer-mt.js"), "w", encoding="utf-8") as f:
-        f.write(POLYFILL + engine_js)
+        # An engine taken from an earlier pack already has the line.
+        f.write((POLYFILL if not engine_js.startswith(POLYFILL) else "") + engine_js)
     shutil.copyfile(os.path.join(args.engine, "slicer-mt.wasm"), os.path.join(out, "slicer-mt.wasm"))
     for name in ("index.html", "bridge.js"):
         shutil.copyfile(os.path.join(HERE, "src", name), os.path.join(out, name))
