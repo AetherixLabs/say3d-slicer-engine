@@ -1,0 +1,1198 @@
+{
+ "format": 1,
+ "version": "0.3.0",
+ "engine": "OrcaSlicer 2.4.2 (OrcaWasm)",
+ "protocol": 2,
+ "files": [
+  {
+   "path": "LICENSE",
+   "size": 34523,
+   "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+  },
+  {
+   "path": "NOTICE.md",
+   "size": 1712,
+   "sha256": "69466c0cd12cdeaec164609868c3d2b17bc4cd5c2423b903449420562a16be87"
+  },
+  {
+   "path": "PROTOCOL.md",
+   "size": 3923,
+   "sha256": "bbad3d67d5afe37e9bd05907d88d88c4b7be290f620780edde6137c662a5ccfb"
+  },
+  {
+   "path": "SOURCE.md",
+   "size": 440,
+   "sha256": "c8a8fd0af26ba82a1ea97a1232c160e93f2b6c6faae6b711413028b516edb046"
+  },
+  {
+   "path": "bridge.js",
+   "size": 10862,
+   "sha256": "6d35df1efd3fee673ed650ce2bfd266e746022a4339c24705bb16189b9eb5d13"
+  },
+  {
+   "path": "catalog.json",
+   "size": 13942,
+   "sha256": "92bb1dbf18b77ce6532d15fab76c4cbc8a36e86aa8523444ca76d61bfcd7701c"
+  },
+  {
+   "path": "index.html",
+   "size": 366,
+   "sha256": "e5d0c77788aa4a92fae9d42cca1e195f6861e00feae4344b8dc1c4e4e4fb1ad6"
+  },
+  {
+   "path": "profiles/a1/filament-abs.json",
+   "size": 4861,
+   "sha256": "a61df590cbba812193a8b6646f2be37c6772cd6b2a40889dbecd44221b824adb"
+  },
+  {
+   "path": "profiles/a1/filament-asa.json",
+   "size": 4864,
+   "sha256": "10fa869d1d0cde38981eaa508c6ed45653d3b5a126f4585aa0da41a5d5c70b0f"
+  },
+  {
+   "path": "profiles/a1/filament-petg-hf.json",
+   "size": 4903,
+   "sha256": "f56c1318edc1e73a497c5246cc197f0572a91c73b1f35ce3ba22c79b81433816"
+  },
+  {
+   "path": "profiles/a1/filament-petg.json",
+   "size": 4896,
+   "sha256": "f8ff498b0f147a92cb667ea73a551b3ed160057f874519cfbfaef49a26f3aeaf"
+  },
+  {
+   "path": "profiles/a1/filament-pla-silk.json",
+   "size": 5085,
+   "sha256": "cf901be4c2a2bbe7d3e57d559a1daf810c54c3b4e6ddd926442623ffa3b51062"
+  },
+  {
+   "path": "profiles/a1/filament-pla.json",
+   "size": 5128,
+   "sha256": "d7b2e5365620af233c065806ff6040be686bec8788eef33484025af704fac2d3"
+  },
+  {
+   "path": "profiles/a1/filament-tpu.json",
+   "size": 5094,
+   "sha256": "30398e954b805142041c9b19cb410b55e4ce3d7ec93361bd0ba701d8b44fedd5"
+  },
+  {
+   "path": "profiles/a1/machine.json",
+   "size": 27712,
+   "sha256": "72da4231bea8e4719fa1876a5ea4b71674706a036939c8d79d72ffd47df7b5ec"
+  },
+  {
+   "path": "profiles/a1/process-0.08.json",
+   "size": 5959,
+   "sha256": "465907e86afa2504679fb6b958cea3ef5ccdc30e803bbf1e42f90e3741e6f582"
+  },
+  {
+   "path": "profiles/a1/process-0.12.json",
+   "size": 5983,
+   "sha256": "e75285b247a984c2f47f1c15ff4697e0d735c7a1786fc811da0f25f2b9267c51"
+  },
+  {
+   "path": "profiles/a1/process-0.16.json",
+   "size": 5982,
+   "sha256": "2452dc18acff3b02fefca8d136bccfb7b7fd7ee2c42bd2336a572cfdc8025cb4"
+  },
+  {
+   "path": "profiles/a1/process-0.20.json",
+   "size": 5934,
+   "sha256": "d1a6d8d8f0073a1902225749d3e9c58e47072a792aad50cc3e62444f25c8396c"
+  },
+  {
+   "path": "profiles/a1/process-0.24.json",
+   "size": 5985,
+   "sha256": "b0c3855fbb08fdae49a427740309941b309788dc041c7394ad01f49cbafd7e70"
+  },
+  {
+   "path": "profiles/a1/process-0.28.json",
+   "size": 5982,
+   "sha256": "fa19884d337cfaeccc057f112b9d8d7e4d26c56d426b2fbbaa428f8204bcb67b"
+  },
+  {
+   "path": "profiles/a1mini/filament-petg-hf.json",
+   "size": 4919,
+   "sha256": "089d1850d5b5e51fe29639b0e3664884011619abec73e4d2b589393747aaf81b"
+  },
+  {
+   "path": "profiles/a1mini/filament-petg.json",
+   "size": 4912,
+   "sha256": "a3abfb16e42b03379760bc6cca30379e9dff4ef28ead0831def43e6801b6227f"
+  },
+  {
+   "path": "profiles/a1mini/filament-pla-silk.json",
+   "size": 5101,
+   "sha256": "8a8e064ff8a281b027d83b103ba645c89b9f5012e0494d4b3bcf58a6dbe43d1b"
+  },
+  {
+   "path": "profiles/a1mini/filament-pla.json",
+   "size": 5144,
+   "sha256": "385839f80f31c051dbdf2811a00b4dcc991b93ffe8244f7973fd8eaf9c489559"
+  },
+  {
+   "path": "profiles/a1mini/filament-tpu.json",
+   "size": 5110,
+   "sha256": "97509b07928b15f094c30b2180a176cc1febe571035eb35ae663afed46f2b3a1"
+  },
+  {
+   "path": "profiles/a1mini/machine.json",
+   "size": 26308,
+   "sha256": "362724007572fc93c46add4d59bcb37a3506de6a2b4753acc70cd604e7f32697"
+  },
+  {
+   "path": "profiles/a1mini/process-0.08.json",
+   "size": 5961,
+   "sha256": "377b86323057471e56b962beae14d16358179e11b10ecc1529d3cc2ec7bad1f3"
+  },
+  {
+   "path": "profiles/a1mini/process-0.12.json",
+   "size": 5985,
+   "sha256": "e33d9d95dabc0429d6005f5407ea92f9e0eb3090798be23cf3a5337934a0c9de"
+  },
+  {
+   "path": "profiles/a1mini/process-0.16.json",
+   "size": 5984,
+   "sha256": "082f0868d7b7660de52db74bf85ee949a16ad3f52946e582b454374e89fb7f4b"
+  },
+  {
+   "path": "profiles/a1mini/process-0.20.json",
+   "size": 5936,
+   "sha256": "05181abc32d1e338a366f4bca69376f0e62ad8ec912cc525933bcdccb9e2a493"
+  },
+  {
+   "path": "profiles/a1mini/process-0.24.json",
+   "size": 5987,
+   "sha256": "312183d8c00788afa4e7bd20fc4fcb55b8997e088ac3132e16d64fda15453fb3"
+  },
+  {
+   "path": "profiles/a1mini/process-0.28.json",
+   "size": 5984,
+   "sha256": "7c474e15cadccc51e03095673444a8abb9f0662f1e32ca0e664bd7063ace65db"
+  },
+  {
+   "path": "profiles/centauri/filament-abs.json",
+   "size": 5122,
+   "sha256": "901d538f7dfb8fc734629cf8b7565a8c5c0bd58469a320bed6063c7934e18ecc"
+  },
+  {
+   "path": "profiles/centauri/filament-petg.json",
+   "size": 4616,
+   "sha256": "47cce235462ad7418ff2104ed5460a5a3fe8657148138595bccd854e92dd9fbd"
+  },
+  {
+   "path": "profiles/centauri/filament-pla.json",
+   "size": 5520,
+   "sha256": "b2567ad1191e1af00b7684267bc1014ae49beada344bd363a07c19f02d837530"
+  },
+  {
+   "path": "profiles/centauri/machine.json",
+   "size": 7933,
+   "sha256": "86dce6983e1bfcd92f8b5ce797913a320dad3c692d5397d2a231780356cdae9b"
+  },
+  {
+   "path": "profiles/centauri/process-0.12.json",
+   "size": 5749,
+   "sha256": "5a651a6cbbb6659a59070f616ab4fb7dba11ee6486ce2eb5346b6e44cf4fe71a"
+  },
+  {
+   "path": "profiles/centauri/process-0.16.json",
+   "size": 5752,
+   "sha256": "5c57f724dd8bb3e7955c46eb6844fdc15147daaef0418743a376f0c897cafde6"
+  },
+  {
+   "path": "profiles/centauri/process-0.20.json",
+   "size": 5752,
+   "sha256": "9192f72ac2409a73be73855c73633afd1eb3683cf3fbde44a0db1e82709917b9"
+  },
+  {
+   "path": "profiles/centauri/process-0.24.json",
+   "size": 5750,
+   "sha256": "e228fbb8a7d44127f7daf9189c0d82e6f5f87bfc3fddd9674d010dc7848e6a8a"
+  },
+  {
+   "path": "profiles/centauri/process-0.28.json",
+   "size": 5756,
+   "sha256": "d84f203ad13c30268027e992abffb76599647029e1a991c33297a54b726a5ec9"
+  },
+  {
+   "path": "profiles/coreone/filament-abs.json",
+   "size": 5555,
+   "sha256": "8b614e7e8b11a7e2d7ff2e430de1da54762a2196b68faa7fb650355321a8549f"
+  },
+  {
+   "path": "profiles/coreone/filament-asa.json",
+   "size": 5563,
+   "sha256": "4b0beff0416a3ab1f0b32a7c039958dea3019fc90c5aec33eb15222adda43bd3"
+  },
+  {
+   "path": "profiles/coreone/filament-petg.json",
+   "size": 5561,
+   "sha256": "9eacf1eee8f2bebfff73b80b74dc2600b33a498c4c4a2279a8695823e2f6c7dc"
+  },
+  {
+   "path": "profiles/coreone/filament-pla.json",
+   "size": 5613,
+   "sha256": "64c076faacafa9d2cce24e56d4abfea5f124d6a8021d0ec261f069de4a69c85b"
+  },
+  {
+   "path": "profiles/coreone/machine.json",
+   "size": 8512,
+   "sha256": "6c8fd27d16778a62b96a6a36dbbc705e445253cb1cbf8cece593f71011af6145"
+  },
+  {
+   "path": "profiles/coreone/process-0.10.json",
+   "size": 6150,
+   "sha256": "33695cb866606b902b3bf117ef4eb5461c787f8191e7fff4375e5c48b8e9524e"
+  },
+  {
+   "path": "profiles/coreone/process-0.15.json",
+   "size": 6181,
+   "sha256": "27dc96bfbb4d4c2eed8d3ca9fb7046e079c5cf7b9571b2d9fa945952d85fd27c"
+  },
+  {
+   "path": "profiles/coreone/process-0.20.json",
+   "size": 6186,
+   "sha256": "86de791352341463718ff59c4bb70643bec0f5e0702ff102ba1e508773b144f8"
+  },
+  {
+   "path": "profiles/ender3v3/filament-abs.json",
+   "size": 4932,
+   "sha256": "a59216dd436512ed42bd4eb9454155c9b8eecffe48ac5680105a55ff206c3471"
+  },
+  {
+   "path": "profiles/ender3v3/filament-asa.json",
+   "size": 4933,
+   "sha256": "b8bbe418a21bcfbc75e95454a0ce2f06cfdbe303829a6483e5599100d19cd927"
+  },
+  {
+   "path": "profiles/ender3v3/filament-petg.json",
+   "size": 4795,
+   "sha256": "8b922363d374eef110a654e9d9ed449402796ba992109b7c89444c4f5947ff46"
+  },
+  {
+   "path": "profiles/ender3v3/filament-pla.json",
+   "size": 5189,
+   "sha256": "742f7e17af3fb911d03a4734a594bdae5c854abe5bec8f5aac93ebd50e8b0aad"
+  },
+  {
+   "path": "profiles/ender3v3/filament-tpu.json",
+   "size": 5182,
+   "sha256": "fec3070511254e9a6a2054110db3d683bc1bd3e3690db77c679c0ecd89f4ebef"
+  },
+  {
+   "path": "profiles/ender3v3/machine.json",
+   "size": 3852,
+   "sha256": "d610221f09256fff21f7ac316beae0cc7ac0729149c8d936224997040e63e8cc"
+  },
+  {
+   "path": "profiles/ender3v3/process-0.12.json",
+   "size": 5425,
+   "sha256": "6e882545b2ccd3ff64940095861a9091b5f04dec65bddb6ccecb465c352ab3dd"
+  },
+  {
+   "path": "profiles/ender3v3/process-0.16.json",
+   "size": 5428,
+   "sha256": "13c9248ca0a25928a0627141435278fc4b53a11fc8d1eb79b11c0ee582934e5e"
+  },
+  {
+   "path": "profiles/ender3v3/process-0.20.json",
+   "size": 5426,
+   "sha256": "f0c4e65000a0161f30057b83934ed9ae70a40bee791bc8a98ea51cc79478e5ba"
+  },
+  {
+   "path": "profiles/ender3v3/process-0.24.json",
+   "size": 5424,
+   "sha256": "8f27209812aeb1a3c091fd281cfff9dce4063ee46f68ea7d5022ca8ee546ee90"
+  },
+  {
+   "path": "profiles/h2d/filament-abs.json",
+   "size": 4976,
+   "sha256": "f518b9929062bab18ba29bf25ac87d49b97e2d09a3a2a0633b4d85d375738ef4"
+  },
+  {
+   "path": "profiles/h2d/filament-asa.json",
+   "size": 4983,
+   "sha256": "6a5364a79e2f2ff1a673c1f78d5f5ce3dcb200661a39d474367d3fb9b5a80dbb"
+  },
+  {
+   "path": "profiles/h2d/filament-petg-hf.json",
+   "size": 4775,
+   "sha256": "4d0dbd8c54615e5702adc0fa6af138705c1be82b8baf99926bacc7cb274e3020"
+  },
+  {
+   "path": "profiles/h2d/filament-petg.json",
+   "size": 4769,
+   "sha256": "3ef96ed4be6d4c0e166da510e2d3f8cac540cfd81d98f1903369905a50e09aa6"
+  },
+  {
+   "path": "profiles/h2d/filament-pla-silk.json",
+   "size": 4938,
+   "sha256": "605b9f5d9aedd365a8ddd3c9167d154fa9feaae1f73db7c6763e8026db103a45"
+  },
+  {
+   "path": "profiles/h2d/filament-pla.json",
+   "size": 4978,
+   "sha256": "21bb42631ea1f2e7a2782895c0f4399637f38ea586bbed3106945b16b62613f9"
+  },
+  {
+   "path": "profiles/h2d/filament-tpu.json",
+   "size": 4972,
+   "sha256": "1768fb7ebf4644be57394a8bd7d92087cfe908cd9225bc065cbf63606f9a2819"
+  },
+  {
+   "path": "profiles/h2d/machine.json",
+   "size": 30592,
+   "sha256": "98b986882a92c9f851cd2b1ba60a963392cf3d4a20137e87c913d6fc51b342a4"
+  },
+  {
+   "path": "profiles/h2d/process-0.08.json",
+   "size": 6857,
+   "sha256": "1a2730851c1b2761934b526f5c225422d41d98e3e8da7cb2177c5f48abbf9600"
+  },
+  {
+   "path": "profiles/h2d/process-0.12.json",
+   "size": 6852,
+   "sha256": "c60426f263f4a8894a1fe1e837657a2377886d3acc4fd343df02bb5e7072c4fe"
+  },
+  {
+   "path": "profiles/h2d/process-0.16.json",
+   "size": 6978,
+   "sha256": "55e4f86e678cefcfda62bcdab9aa63d40f22abae9a6f1457c8d329daac4018a6"
+  },
+  {
+   "path": "profiles/h2d/process-0.20.json",
+   "size": 6943,
+   "sha256": "f59d44b971cc779f5c34ad0af08226d44b41224008a20ae80067efb0d6f3a06d"
+  },
+  {
+   "path": "profiles/h2d/process-0.24.json",
+   "size": 6870,
+   "sha256": "eeeed036f8d349358d69d24a2ef0ce16588bb339f43782406edb380f5214920b"
+  },
+  {
+   "path": "profiles/k1/filament-abs.json",
+   "size": 6492,
+   "sha256": "a92d5ef35947392d6af8980c1d9216f2ffa540ef1ae9f09963a29d073e07c02c"
+  },
+  {
+   "path": "profiles/k1/filament-asa.json",
+   "size": 6126,
+   "sha256": "7d32620130262d3c03955b00346fd54cdf893ee412f90b88e578c7298819bfca"
+  },
+  {
+   "path": "profiles/k1/filament-petg.json",
+   "size": 6353,
+   "sha256": "5dac092cfe09d943eaf30ad170d5a81eed94c78e8cba13368e96cd0651a5dd8a"
+  },
+  {
+   "path": "profiles/k1/filament-pla.json",
+   "size": 6746,
+   "sha256": "97921149b1582d63ec573cadef1fefb351ceb493cc4b5aba8737bd4569e9dafc"
+  },
+  {
+   "path": "profiles/k1/filament-tpu.json",
+   "size": 5326,
+   "sha256": "df16eeb58261056a65aeea2a4f2454be9b5e3e5cb663c9838ca766418ebe0496"
+  },
+  {
+   "path": "profiles/k1/machine.json",
+   "size": 5164,
+   "sha256": "acbdf29985d1b2e13f22ef8d36b84fe508abe6725a6bb71d048fb629ecfa3b39"
+  },
+  {
+   "path": "profiles/k1/process-0.08.json",
+   "size": 10449,
+   "sha256": "1eb75de68513abc478281b838a29e1a17f467fb6c0667e422b0a298fb7b5710c"
+  },
+  {
+   "path": "profiles/k1/process-0.12.json",
+   "size": 5424,
+   "sha256": "0d92245d02deb394580fda9199cc03b016c71864f23d71c7bb2b6533579bcf05"
+  },
+  {
+   "path": "profiles/k1/process-0.16.json",
+   "size": 10447,
+   "sha256": "d5e34a68cd5af6b0b8ed9950eab9c1a40f8ce89d74d2a87ae18d1e8ee694a012"
+  },
+  {
+   "path": "profiles/k1/process-0.20.json",
+   "size": 10339,
+   "sha256": "6f858b68fdb392f319207bded47150dfbba8f17121f32d6cdd4c34881d273832"
+  },
+  {
+   "path": "profiles/k1/process-0.24.json",
+   "size": 10445,
+   "sha256": "42e812aeae1390b99c26b159e2c2535d55bb5ffbbc693261193a84d366b7d10a"
+  },
+  {
+   "path": "profiles/k1c/filament-abs.json",
+   "size": 5820,
+   "sha256": "c437c185affe895f6f5c6f44519c16160f9272e9c12167b4584ae37777af0636"
+  },
+  {
+   "path": "profiles/k1c/filament-asa.json",
+   "size": 5822,
+   "sha256": "d9c9f7def36a12fd44856916a03bc9136bac1c4d83d0e2f4f6a6e3f57ea97664"
+  },
+  {
+   "path": "profiles/k1c/filament-petg.json",
+   "size": 5756,
+   "sha256": "52f557ea450a2c91080f8c3075ba967edbe37a399a40425a579fd063df2d4e51"
+  },
+  {
+   "path": "profiles/k1c/filament-pla.json",
+   "size": 5847,
+   "sha256": "8963387a3a5ef3bebb349b46b240c05184dadae3b80e5f7e2c412335fbd04cdf"
+  },
+  {
+   "path": "profiles/k1c/filament-tpu.json",
+   "size": 5862,
+   "sha256": "1fe5df59f281d92e253e242cb929a1267941a906c7feb8278d51e47f2d9c8a67"
+  },
+  {
+   "path": "profiles/k1c/machine.json",
+   "size": 5170,
+   "sha256": "32c29e4699821de8962e0e8aa7247ca23a9a50dcd3e2f10c7fda72d4dabf3c97"
+  },
+  {
+   "path": "profiles/k1c/process-0.08.json",
+   "size": 10446,
+   "sha256": "d20ade9079e91f51f8490971816622d85257af3157ee4613385aac4a1026a1bb"
+  },
+  {
+   "path": "profiles/k1c/process-0.12.json",
+   "size": 5411,
+   "sha256": "fdd07d39e0c777c90ecd214f056316accfd183b41dcdfac8e539c2b275decb1f"
+  },
+  {
+   "path": "profiles/k1c/process-0.16.json",
+   "size": 10433,
+   "sha256": "8ed7ac8c4a168097f0368b1c2344db166e7b8bd28cad43ef1f861a5df594a4bb"
+  },
+  {
+   "path": "profiles/k1c/process-0.20.json",
+   "size": 10325,
+   "sha256": "f3c774eae2bcd4794084dc713e377ffd79730ce2cbdd8b7a43f8cb06d398c5d2"
+  },
+  {
+   "path": "profiles/k1c/process-0.24.json",
+   "size": 10431,
+   "sha256": "d0f1556929145ad78873a321341572f268b32c593d5219004ab09f00683f3679"
+  },
+  {
+   "path": "profiles/k1max/filament-abs.json",
+   "size": 6492,
+   "sha256": "a92d5ef35947392d6af8980c1d9216f2ffa540ef1ae9f09963a29d073e07c02c"
+  },
+  {
+   "path": "profiles/k1max/filament-asa.json",
+   "size": 6126,
+   "sha256": "7d32620130262d3c03955b00346fd54cdf893ee412f90b88e578c7298819bfca"
+  },
+  {
+   "path": "profiles/k1max/filament-petg.json",
+   "size": 6353,
+   "sha256": "5dac092cfe09d943eaf30ad170d5a81eed94c78e8cba13368e96cd0651a5dd8a"
+  },
+  {
+   "path": "profiles/k1max/filament-pla.json",
+   "size": 6746,
+   "sha256": "97921149b1582d63ec573cadef1fefb351ceb493cc4b5aba8737bd4569e9dafc"
+  },
+  {
+   "path": "profiles/k1max/filament-tpu.json",
+   "size": 5326,
+   "sha256": "df16eeb58261056a65aeea2a4f2454be9b5e3e5cb663c9838ca766418ebe0496"
+  },
+  {
+   "path": "profiles/k1max/machine.json",
+   "size": 5174,
+   "sha256": "eb30ad91ba7188e9b26952e98a7c0a6ddbe7cbdb2d4f270cc95edcabcd92bf9a"
+  },
+  {
+   "path": "profiles/k1max/process-0.08.json",
+   "size": 10456,
+   "sha256": "a30a99c74c45d130f211439df9cee3cc05fee08513bbcc430e91009921a1bf69"
+  },
+  {
+   "path": "profiles/k1max/process-0.12.json",
+   "size": 5430,
+   "sha256": "fc966a5a8454da776f8cd70bae48f655bb0e3f18ace1950fcd7f9c6d37ea74dc"
+  },
+  {
+   "path": "profiles/k1max/process-0.16.json",
+   "size": 10454,
+   "sha256": "5c25e4d6a7f1ed5853f69bfad6d70ff80e1a72bb392eef1dbfb257cac3792b57"
+  },
+  {
+   "path": "profiles/k1max/process-0.20.json",
+   "size": 10346,
+   "sha256": "cb7ab979696fcdeb119477a3fe60f462df5632ddfdb68b746da268ab7ec0cdbb"
+  },
+  {
+   "path": "profiles/k1max/process-0.24.json",
+   "size": 10452,
+   "sha256": "67e0ae1b4feb12a8bb842888b25de9eecf1cf693d3081d5b401287fe6a531f09"
+  },
+  {
+   "path": "profiles/k2plus/filament-abs.json",
+   "size": 5987,
+   "sha256": "4447e2df73ce0c40807b5917d5aae54e321ff40668017e98f397c7856854c383"
+  },
+  {
+   "path": "profiles/k2plus/filament-asa.json",
+   "size": 5914,
+   "sha256": "becf77fbda9d0f6fb027a770474e8f871ebf2f9dba2dfc6efc27f0de4b4dc9ba"
+  },
+  {
+   "path": "profiles/k2plus/filament-petg.json",
+   "size": 5901,
+   "sha256": "0150244202d7ab8874194dea565829dcb82368b185ebf8a873b73d7a096fb585"
+  },
+  {
+   "path": "profiles/k2plus/filament-pla.json",
+   "size": 5963,
+   "sha256": "7cda2ae27b961a402af13b19ace2c52e14beaa937829bdb5a579bddeb46e3a3d"
+  },
+  {
+   "path": "profiles/k2plus/filament-tpu.json",
+   "size": 5883,
+   "sha256": "50006329892d956460ab1953b113499dee8213c0c36d8928db3d79e3edbeb567"
+  },
+  {
+   "path": "profiles/k2plus/machine.json",
+   "size": 5128,
+   "sha256": "acebbea70ee67dca5801a40a511f2f39d5abe4d8b996d1865fb8a9a3effde2e4"
+  },
+  {
+   "path": "profiles/k2plus/process-0.08.json",
+   "size": 10448,
+   "sha256": "98d66e373f8da9506cf17671175e12d2cff115b5fefa3aa7ad9cd68734d28a62"
+  },
+  {
+   "path": "profiles/k2plus/process-0.12.json",
+   "size": 9614,
+   "sha256": "0e67efa39d9649ae505b4a79b58d1a75bf5e0b8a0de9511f02e4189023fa4c1f"
+  },
+  {
+   "path": "profiles/k2plus/process-0.16.json",
+   "size": 9615,
+   "sha256": "56004f9d92f70dbcd58054be27624c17af19a665102a257975e911180dc0508a"
+  },
+  {
+   "path": "profiles/k2plus/process-0.20.json",
+   "size": 9616,
+   "sha256": "5db88d26220be70024e3b603a6c7af1a58aca8f6849d6b9f7390e795db81c736"
+  },
+  {
+   "path": "profiles/k2plus/process-0.24.json",
+   "size": 9613,
+   "sha256": "989e0b28f349a45056f23804f6a530a0348423801ac9fcb005b8a3eff61c4ca4"
+  },
+  {
+   "path": "profiles/k2plus/process-0.28.json",
+   "size": 9618,
+   "sha256": "aacdb8f0e4dfeb072ee3f73ca8c9390e717a892b67ec36909f169b9a0baa292c"
+  },
+  {
+   "path": "profiles/miniis/filament-abs.json",
+   "size": 4657,
+   "sha256": "e5e350e53ccec5796c7f43e14cc207f3d9791980910df89a5448f0a9123c3f36"
+  },
+  {
+   "path": "profiles/miniis/filament-asa.json",
+   "size": 4658,
+   "sha256": "16e6c3d73b6bc3528fa1ca97062192e8bbf40b777bc5e1763ef59df6ee8a68e4"
+  },
+  {
+   "path": "profiles/miniis/filament-petg.json",
+   "size": 4919,
+   "sha256": "f2e9bf39a97bcb1814fa1936324ca6244bfa2ca3c0819d214effe112603dfb50"
+  },
+  {
+   "path": "profiles/miniis/filament-pla.json",
+   "size": 4906,
+   "sha256": "b68361a1d556acf0429f5d268fcb60b93801b0b7af8f4b4fdd8003ac10ce4605"
+  },
+  {
+   "path": "profiles/miniis/machine.json",
+   "size": 5774,
+   "sha256": "fc7a5a25a9350cf59f70c952512c24948b998a6b408f7d97f69e2d2c5971cfef"
+  },
+  {
+   "path": "profiles/miniis/process-0.10.json",
+   "size": 5749,
+   "sha256": "ddf833da8896b722bca85a3c2b5897af58ab474de40925405d03a1e2501abf05"
+  },
+  {
+   "path": "profiles/miniis/process-0.15.json",
+   "size": 5758,
+   "sha256": "63b6f49a7955e44e2c43dd6d2a0c0c359699b2e13d7588788e091f45ef40ab77"
+  },
+  {
+   "path": "profiles/miniis/process-0.20.json",
+   "size": 5748,
+   "sha256": "89225ffa04a685a15aa445f99d7ca5cc324aa4f0a533292a5b83a6af720fec98"
+  },
+  {
+   "path": "profiles/mk4/filament-abs.json",
+   "size": 5319,
+   "sha256": "e873ffd4774e0d49968a77145157cad9e4f7d02f262ac64b4333fd0f74240c9f"
+  },
+  {
+   "path": "profiles/mk4/filament-asa.json",
+   "size": 5132,
+   "sha256": "1d86f0b03fd073608bdc3197cf596ef5516c91bc05da61be04f1d01c625878bb"
+  },
+  {
+   "path": "profiles/mk4/filament-petg.json",
+   "size": 5329,
+   "sha256": "19c97861bcce994a43cc577367458abbd9740bebf1b378de5cf7f3fa175a6269"
+  },
+  {
+   "path": "profiles/mk4/filament-pla.json",
+   "size": 5305,
+   "sha256": "b3c4d1e7944cb732c5d8ccb58000717ff54aa7547a2a0e8040432f6d1367aaba"
+  },
+  {
+   "path": "profiles/mk4/filament-tpu.json",
+   "size": 4903,
+   "sha256": "ec04a58e232f86dc1a797d41755274e48bfbbef3e15a6caf85961dc891437509"
+  },
+  {
+   "path": "profiles/mk4/machine.json",
+   "size": 7071,
+   "sha256": "032a258094d0dad3911fd8afe2fec6b5ab2bb4b87e1d6d88582c78d2c3d6f74f"
+  },
+  {
+   "path": "profiles/mk4/process-0.08.json",
+   "size": 5107,
+   "sha256": "a1867625b4f27c5db123bd4e0fa1b61198b10a1f8eafa033dd8b3d6e59849664"
+  },
+  {
+   "path": "profiles/mk4/process-0.12.json",
+   "size": 5107,
+   "sha256": "ff8d258569e3494271bd6730521185c3b9a433cb36a5c55da852c0eabef55738"
+  },
+  {
+   "path": "profiles/mk4/process-0.16.json",
+   "size": 5133,
+   "sha256": "a88713536a429ba90f0bb301b01318c1c3f35e03a06f35e03636a2180b46bff6"
+  },
+  {
+   "path": "profiles/mk4/process-0.20.json",
+   "size": 5129,
+   "sha256": "8dad40d5dd8e7fa5dc485991038ea73076587752410f229770dde2e90da576e3"
+  },
+  {
+   "path": "profiles/mk4/process-0.24.json",
+   "size": 5130,
+   "sha256": "a1d89444d0b3924f36f478fce04de49633fe9f30cab9f0b4000588f85b165a63"
+  },
+  {
+   "path": "profiles/mk4/process-0.28.json",
+   "size": 5130,
+   "sha256": "1c4e055022a31e0678c38e179a035e9ceab07ab455c83bcf796e6b10a4d05d14"
+  },
+  {
+   "path": "profiles/mk4s/filament-abs.json",
+   "size": 5607,
+   "sha256": "c64964c0ab847f7a81560ceee0cdb19d80f35021a16fcd24901ea0a8402e3b6e"
+  },
+  {
+   "path": "profiles/mk4s/filament-asa.json",
+   "size": 5422,
+   "sha256": "425c48634c8cc556af17095e368048b12fdfc4d591215d93bb7dfa83b32368f7"
+  },
+  {
+   "path": "profiles/mk4s/filament-petg.json",
+   "size": 5572,
+   "sha256": "b29015a98cec84309d0c529169cd43aae321f17007a093286d1221eca85ae32d"
+  },
+  {
+   "path": "profiles/mk4s/filament-pla.json",
+   "size": 5602,
+   "sha256": "51decfd4371a5459b66a6799606b9d005851c937ae41fd04ba69d30f189f8c9d"
+  },
+  {
+   "path": "profiles/mk4s/machine.json",
+   "size": 7285,
+   "sha256": "9aed6a0845ad369f2df4e62f764214e2b9f6d399d334f6cf6cc570892cdc9caa"
+  },
+  {
+   "path": "profiles/mk4s/process-0.10.json",
+   "size": 6078,
+   "sha256": "4a6e0e2cc5a46a2eaa91e97f89ca77c6a712efc52c3b6cab4c943af93dcd8041"
+  },
+  {
+   "path": "profiles/mk4s/process-0.15.json",
+   "size": 6109,
+   "sha256": "2493996a5362290b9acfd30f4ed98f4c83a049e9dc9242903f0d02298790e482"
+  },
+  {
+   "path": "profiles/mk4s/process-0.20.json",
+   "size": 6114,
+   "sha256": "8a5539cfd8acde240893dd1acd99803b4c1798f556f1651c0aeb83fdac837fb4"
+  },
+  {
+   "path": "profiles/neptune4/filament-abs.json",
+   "size": 6438,
+   "sha256": "ebfbe0342bd5aee5d8e71f6ef5934048a35b1d9f6d77b77cc799f25ed03299f7"
+  },
+  {
+   "path": "profiles/neptune4/filament-asa.json",
+   "size": 6426,
+   "sha256": "668c4c8f53786a6e332fadf05d774b6c79532840128a606e64889f27e6c70cdf"
+  },
+  {
+   "path": "profiles/neptune4/filament-petg.json",
+   "size": 6228,
+   "sha256": "a5e0560877279d4fc6ee7859ca7fbea072bd327da9423f6d72a5c6a8d12add86"
+  },
+  {
+   "path": "profiles/neptune4/filament-pla.json",
+   "size": 6438,
+   "sha256": "aff562bbb92fd53e8127bd42b74d71acc19b1eeeb75009def216ae96eb52324e"
+  },
+  {
+   "path": "profiles/neptune4/machine.json",
+   "size": 4951,
+   "sha256": "ab129bf54ebc2e395ebcaeaee3cdb810e723307381e69773239768cb4c502173"
+  },
+  {
+   "path": "profiles/neptune4/process-0.12.json",
+   "size": 5841,
+   "sha256": "2d5732aa9a104899de5b1b5f82281411cd833e907a6fe60f4ed62b7012b130b2"
+  },
+  {
+   "path": "profiles/neptune4/process-0.16.json",
+   "size": 5799,
+   "sha256": "f978ed82aeb51a4517843ea318f3d13e0a841a5ee3e805ee8ec5c285e8c31401"
+  },
+  {
+   "path": "profiles/neptune4/process-0.20.json",
+   "size": 5800,
+   "sha256": "2e6103fa6aa0259757a82a3d0866b5bd3a25e656e18bc7030c905bf40aeb0b8a"
+  },
+  {
+   "path": "profiles/neptune4/process-0.24.json",
+   "size": 5795,
+   "sha256": "c1fba8c2fdc3f646dcd7c4cd801e8aa907b86f7f91e246b30b22fb07c44f3ff7"
+  },
+  {
+   "path": "profiles/neptune4/process-0.28.json",
+   "size": 5807,
+   "sha256": "57b1b4b6359908ca0f6e8e31a6f2cf31a56faa47a421d1b890d3ec2b60280e8e"
+  },
+  {
+   "path": "profiles/neptune4pro/filament-abs.json",
+   "size": 6438,
+   "sha256": "ebfbe0342bd5aee5d8e71f6ef5934048a35b1d9f6d77b77cc799f25ed03299f7"
+  },
+  {
+   "path": "profiles/neptune4pro/filament-asa.json",
+   "size": 6426,
+   "sha256": "668c4c8f53786a6e332fadf05d774b6c79532840128a606e64889f27e6c70cdf"
+  },
+  {
+   "path": "profiles/neptune4pro/filament-petg.json",
+   "size": 6228,
+   "sha256": "a5e0560877279d4fc6ee7859ca7fbea072bd327da9423f6d72a5c6a8d12add86"
+  },
+  {
+   "path": "profiles/neptune4pro/filament-pla.json",
+   "size": 6438,
+   "sha256": "aff562bbb92fd53e8127bd42b74d71acc19b1eeeb75009def216ae96eb52324e"
+  },
+  {
+   "path": "profiles/neptune4pro/machine.json",
+   "size": 5334,
+   "sha256": "92729e80fc7a70c5906b384513167d62e4332c52e52dd5221e3251c4bbafaff0"
+  },
+  {
+   "path": "profiles/neptune4pro/process-0.12.json",
+   "size": 5857,
+   "sha256": "0cf6ec7b64e4217849ab77307af452959517d0990ae1fbd47f1048198b60606b"
+  },
+  {
+   "path": "profiles/neptune4pro/process-0.16.json",
+   "size": 5812,
+   "sha256": "c99ef0f25b5fc452d06cfc223326d5567c6f7e14848187e6b0c4a1123f4262bd"
+  },
+  {
+   "path": "profiles/neptune4pro/process-0.20.json",
+   "size": 5813,
+   "sha256": "22230fd27b9882d1aeb23e99fc48547abf41f7658900edc4b79c43fa8922a69c"
+  },
+  {
+   "path": "profiles/neptune4pro/process-0.24.json",
+   "size": 5808,
+   "sha256": "7b809783c0f43e0ed9e33fe3b1fc53424e9de8cd649548672c179d66cd9baf87"
+  },
+  {
+   "path": "profiles/neptune4pro/process-0.28.json",
+   "size": 5820,
+   "sha256": "d08e61c3afb069769a8eae023879aae81e842e153c85d95c9af02239558bee3f"
+  },
+  {
+   "path": "profiles/p1p/filament-abs.json",
+   "size": 5120,
+   "sha256": "e3c869f0d359a30411b5fbc2dcbff25ef09ef867b1eb0fa01af905def856c626"
+  },
+  {
+   "path": "profiles/p1p/filament-asa.json",
+   "size": 5123,
+   "sha256": "9c049118967fc89fb7e9116a26db3061e5dfc811ab13a33821472f62e2c1c08f"
+  },
+  {
+   "path": "profiles/p1p/filament-petg-hf.json",
+   "size": 5162,
+   "sha256": "575ef32be7b62a474c5dfd91d7a7d2e13c15c892f762be591034af6a19c11b2d"
+  },
+  {
+   "path": "profiles/p1p/filament-petg.json",
+   "size": 5156,
+   "sha256": "bc13db309e585b91092acc64671ba76825a3411f394213e05a7f314916c5550a"
+  },
+  {
+   "path": "profiles/p1p/filament-pla-silk.json",
+   "size": 5348,
+   "sha256": "a1ca8def25f92dde48f284bc34635ce465b29c3d9af6632e4d3b41d0c423aa0b"
+  },
+  {
+   "path": "profiles/p1p/filament-pla.json",
+   "size": 5388,
+   "sha256": "524d32ecec298925519b6886edadc611b1b3ad375b673ff642bd3eec05ec9d6b"
+  },
+  {
+   "path": "profiles/p1p/filament-tpu.json",
+   "size": 5351,
+   "sha256": "928e04a54a330249e0e7230d31c5f0832ff645e648fb0993f8981fdfac190a80"
+  },
+  {
+   "path": "profiles/p1p/machine.json",
+   "size": 19406,
+   "sha256": "6bd6ac8bdd8ff481aa36fd239a7284d4b232e2d7a5a9eee97bb782d42f79355b"
+  },
+  {
+   "path": "profiles/p1p/process-0.08.json",
+   "size": 6325,
+   "sha256": "99f6b9490ad504f8ef2862493dc625210a8554854752c963113e2b19fa089af3"
+  },
+  {
+   "path": "profiles/p1p/process-0.12.json",
+   "size": 6349,
+   "sha256": "1a01a2479e00db288dae47fa99eb3974a08436a5f3c875e95d3d80d8fbcf78a1"
+  },
+  {
+   "path": "profiles/p1p/process-0.16.json",
+   "size": 6348,
+   "sha256": "f0dcb1f176e5426b120ac4d16c53419f6c61661d33a9d6f462ae1e14b02e13dd"
+  },
+  {
+   "path": "profiles/p1p/process-0.20.json",
+   "size": 6299,
+   "sha256": "57663b37ffdd04cc673d40dbec41158d6bd3e22fc788c550534bf013da9d0846"
+  },
+  {
+   "path": "profiles/p1p/process-0.24.json",
+   "size": 6350,
+   "sha256": "99c08539928726ae0bbda8497e9e86ab193d4d212b64d759baa09b882463096a"
+  },
+  {
+   "path": "profiles/p1p/process-0.28.json",
+   "size": 6347,
+   "sha256": "ef26ba785b7d2ad91546279e80290c67bc40df65c69452c92783b048520ed8ed"
+  },
+  {
+   "path": "profiles/p1s/filament-abs.json",
+   "size": 5044,
+   "sha256": "5cc2878396791611b02b1714c823bbc176477648daa39f91f3e7e153688364e9"
+  },
+  {
+   "path": "profiles/p1s/filament-asa.json",
+   "size": 5051,
+   "sha256": "82eb290b3b9544f78a5174cbf502b00e69fde772e1f1d7510767e985ff1946e1"
+  },
+  {
+   "path": "profiles/p1s/filament-petg-hf.json",
+   "size": 5447,
+   "sha256": "e0162723cd43d98caa2e41dbd01871e08a1c107e65080cc03d177069c6862851"
+  },
+  {
+   "path": "profiles/p1s/filament-petg.json",
+   "size": 5174,
+   "sha256": "4a0e6f5d1a75e93838fd55b1b9140cbf52d2db3bafaaa088020a465bb3852c9e"
+  },
+  {
+   "path": "profiles/p1s/filament-pla-silk.json",
+   "size": 5457,
+   "sha256": "9a50b7033f011cb16cf0ff49f2ec23301801a0109ea71c771e2b6547826cfdb2"
+  },
+  {
+   "path": "profiles/p1s/filament-pla.json",
+   "size": 5495,
+   "sha256": "2c301d87ccfff9af1d7baa74b03f635de96032027d0ca229f325a2bbbb36a00d"
+  },
+  {
+   "path": "profiles/p1s/filament-tpu.json",
+   "size": 5373,
+   "sha256": "78bf832779f184b77869263c8ea10381026c20e65744b44d9ef2d143254aa820"
+  },
+  {
+   "path": "profiles/p1s/machine.json",
+   "size": 19490,
+   "sha256": "ceca4e31934ec71a2d29153940a785b10cca4dbaf9985d70957dcafb12813bb4"
+  },
+  {
+   "path": "profiles/p1s/process-0.08.json",
+   "size": 6421,
+   "sha256": "7ccb447cbd60629f5226af59b39efee728592f48b39cd4699018bbb3aef8ff49"
+  },
+  {
+   "path": "profiles/p1s/process-0.12.json",
+   "size": 6445,
+   "sha256": "c742c593fcf278e9a4c08d13120b06202f93bf68cdb9bf193e9a187c8eed2871"
+  },
+  {
+   "path": "profiles/p1s/process-0.16.json",
+   "size": 6444,
+   "sha256": "31630614eb909cec4329fe98f5cc16c6d7e80c221030a73389c8551f24e32eac"
+  },
+  {
+   "path": "profiles/p1s/process-0.20.json",
+   "size": 6447,
+   "sha256": "5588c0b17e378858716e491899a300e58aea28af8e89f0b313211e178acced41"
+  },
+  {
+   "path": "profiles/p1s/process-0.24.json",
+   "size": 6446,
+   "sha256": "6ad333e36066e66d0d678d3acf8827900794b54d495e90d90a4d398f24b46613"
+  },
+  {
+   "path": "profiles/p1s/process-0.28.json",
+   "size": 6443,
+   "sha256": "63431c2935bb17ed87a6bce68daee6ea8055869b164ea0fbc63acf1e08ceb59f"
+  },
+  {
+   "path": "profiles/x1/filament-abs.json",
+   "size": 5044,
+   "sha256": "5cc2878396791611b02b1714c823bbc176477648daa39f91f3e7e153688364e9"
+  },
+  {
+   "path": "profiles/x1/filament-asa.json",
+   "size": 5051,
+   "sha256": "82eb290b3b9544f78a5174cbf502b00e69fde772e1f1d7510767e985ff1946e1"
+  },
+  {
+   "path": "profiles/x1/filament-petg-hf.json",
+   "size": 5447,
+   "sha256": "e0162723cd43d98caa2e41dbd01871e08a1c107e65080cc03d177069c6862851"
+  },
+  {
+   "path": "profiles/x1/filament-petg.json",
+   "size": 5174,
+   "sha256": "4a0e6f5d1a75e93838fd55b1b9140cbf52d2db3bafaaa088020a465bb3852c9e"
+  },
+  {
+   "path": "profiles/x1/filament-pla-silk.json",
+   "size": 5457,
+   "sha256": "9a50b7033f011cb16cf0ff49f2ec23301801a0109ea71c771e2b6547826cfdb2"
+  },
+  {
+   "path": "profiles/x1/filament-pla.json",
+   "size": 5495,
+   "sha256": "2c301d87ccfff9af1d7baa74b03f635de96032027d0ca229f325a2bbbb36a00d"
+  },
+  {
+   "path": "profiles/x1/filament-tpu.json",
+   "size": 5373,
+   "sha256": "78bf832779f184b77869263c8ea10381026c20e65744b44d9ef2d143254aa820"
+  },
+  {
+   "path": "profiles/x1/machine.json",
+   "size": 34808,
+   "sha256": "9f06bc84d5c374529e3e180831a6ed9a8469bc0c35d1c4021c7fdd8e93cda92b"
+  },
+  {
+   "path": "profiles/x1/process-0.08.json",
+   "size": 6421,
+   "sha256": "7ccb447cbd60629f5226af59b39efee728592f48b39cd4699018bbb3aef8ff49"
+  },
+  {
+   "path": "profiles/x1/process-0.12.json",
+   "size": 6445,
+   "sha256": "c742c593fcf278e9a4c08d13120b06202f93bf68cdb9bf193e9a187c8eed2871"
+  },
+  {
+   "path": "profiles/x1/process-0.16.json",
+   "size": 6444,
+   "sha256": "31630614eb909cec4329fe98f5cc16c6d7e80c221030a73389c8551f24e32eac"
+  },
+  {
+   "path": "profiles/x1/process-0.20.json",
+   "size": 6447,
+   "sha256": "5588c0b17e378858716e491899a300e58aea28af8e89f0b313211e178acced41"
+  },
+  {
+   "path": "profiles/x1/process-0.24.json",
+   "size": 6446,
+   "sha256": "6ad333e36066e66d0d678d3acf8827900794b54d495e90d90a4d398f24b46613"
+  },
+  {
+   "path": "profiles/x1/process-0.28.json",
+   "size": 6443,
+   "sha256": "63431c2935bb17ed87a6bce68daee6ea8055869b164ea0fbc63acf1e08ceb59f"
+  },
+  {
+   "path": "profiles/x1c/filament-abs.json",
+   "size": 5044,
+   "sha256": "5cc2878396791611b02b1714c823bbc176477648daa39f91f3e7e153688364e9"
+  },
+  {
+   "path": "profiles/x1c/filament-asa.json",
+   "size": 5051,
+   "sha256": "82eb290b3b9544f78a5174cbf502b00e69fde772e1f1d7510767e985ff1946e1"
+  },
+  {
+   "path": "profiles/x1c/filament-petg-hf.json",
+   "size": 5447,
+   "sha256": "e0162723cd43d98caa2e41dbd01871e08a1c107e65080cc03d177069c6862851"
+  },
+  {
+   "path": "profiles/x1c/filament-petg.json",
+   "size": 5174,
+   "sha256": "4a0e6f5d1a75e93838fd55b1b9140cbf52d2db3bafaaa088020a465bb3852c9e"
+  },
+  {
+   "path": "profiles/x1c/filament-pla-silk.json",
+   "size": 5457,
+   "sha256": "9a50b7033f011cb16cf0ff49f2ec23301801a0109ea71c771e2b6547826cfdb2"
+  },
+  {
+   "path": "profiles/x1c/filament-pla.json",
+   "size": 5495,
+   "sha256": "2c301d87ccfff9af1d7baa74b03f635de96032027d0ca229f325a2bbbb36a00d"
+  },
+  {
+   "path": "profiles/x1c/filament-tpu.json",
+   "size": 5373,
+   "sha256": "78bf832779f184b77869263c8ea10381026c20e65744b44d9ef2d143254aa820"
+  },
+  {
+   "path": "profiles/x1c/machine.json",
+   "size": 34833,
+   "sha256": "7d7056f900531b021a91b48d28a866a77eca5198b57b5fe56e04ce4a7ff4d89c"
+  },
+  {
+   "path": "profiles/x1c/process-0.08.json",
+   "size": 6421,
+   "sha256": "7ccb447cbd60629f5226af59b39efee728592f48b39cd4699018bbb3aef8ff49"
+  },
+  {
+   "path": "profiles/x1c/process-0.12.json",
+   "size": 6445,
+   "sha256": "c742c593fcf278e9a4c08d13120b06202f93bf68cdb9bf193e9a187c8eed2871"
+  },
+  {
+   "path": "profiles/x1c/process-0.16.json",
+   "size": 6444,
+   "sha256": "31630614eb909cec4329fe98f5cc16c6d7e80c221030a73389c8551f24e32eac"
+  },
+  {
+   "path": "profiles/x1c/process-0.20.json",
+   "size": 6447,
+   "sha256": "5588c0b17e378858716e491899a300e58aea28af8e89f0b313211e178acced41"
+  },
+  {
+   "path": "profiles/x1c/process-0.24.json",
+   "size": 6446,
+   "sha256": "6ad333e36066e66d0d678d3acf8827900794b54d495e90d90a4d398f24b46613"
+  },
+  {
+   "path": "profiles/x1c/process-0.28.json",
+   "size": 6443,
+   "sha256": "63431c2935bb17ed87a6bce68daee6ea8055869b164ea0fbc63acf1e08ceb59f"
+  },
+  {
+   "path": "profiles/x1e/filament-abs.json",
+   "size": 5116,
+   "sha256": "9cc41cdc5aaab69ed65a3d76a53ee655a22fd814440c6ee17baa3fa48e5ddadc"
+  },
+  {
+   "path": "profiles/x1e/filament-asa.json",
+   "size": 5123,
+   "sha256": "e40aa360e0878224bf4a4131ddc6eec8ff9156443aecdfc9797f8c4cb1e6b80c"
+  },
+  {
+   "path": "profiles/x1e/filament-petg-hf.json",
+   "size": 5447,
+   "sha256": "e0162723cd43d98caa2e41dbd01871e08a1c107e65080cc03d177069c6862851"
+  },
+  {
+   "path": "profiles/x1e/filament-petg.json",
+   "size": 5174,
+   "sha256": "4a0e6f5d1a75e93838fd55b1b9140cbf52d2db3bafaaa088020a465bb3852c9e"
+  },
+  {
+   "path": "profiles/x1e/filament-pla-silk.json",
+   "size": 5457,
+   "sha256": "9a50b7033f011cb16cf0ff49f2ec23301801a0109ea71c771e2b6547826cfdb2"
+  },
+  {
+   "path": "profiles/x1e/filament-pla.json",
+   "size": 5495,
+   "sha256": "2c301d87ccfff9af1d7baa74b03f635de96032027d0ca229f325a2bbbb36a00d"
+  },
+  {
+   "path": "profiles/x1e/filament-tpu.json",
+   "size": 5373,
+   "sha256": "78bf832779f184b77869263c8ea10381026c20e65744b44d9ef2d143254aa820"
+  },
+  {
+   "path": "profiles/x1e/machine.json",
+   "size": 34401,
+   "sha256": "6faec2a1c21b34160fb1f904b6928c6843d4210eac2aca2816f4a7b335c3fa42"
+  },
+  {
+   "path": "profiles/x1e/process-0.08.json",
+   "size": 6421,
+   "sha256": "7ccb447cbd60629f5226af59b39efee728592f48b39cd4699018bbb3aef8ff49"
+  },
+  {
+   "path": "profiles/x1e/process-0.12.json",
+   "size": 6445,
+   "sha256": "c742c593fcf278e9a4c08d13120b06202f93bf68cdb9bf193e9a187c8eed2871"
+  },
+  {
+   "path": "profiles/x1e/process-0.16.json",
+   "size": 6444,
+   "sha256": "31630614eb909cec4329fe98f5cc16c6d7e80c221030a73389c8551f24e32eac"
+  },
+  {
+   "path": "profiles/x1e/process-0.20.json",
+   "size": 6447,
+   "sha256": "5588c0b17e378858716e491899a300e58aea28af8e89f0b313211e178acced41"
+  },
+  {
+   "path": "profiles/x1e/process-0.24.json",
+   "size": 6446,
+   "sha256": "6ad333e36066e66d0d678d3acf8827900794b54d495e90d90a4d398f24b46613"
+  },
+  {
+   "path": "profiles/x1e/process-0.28.json",
+   "size": 6443,
+   "sha256": "63431c2935bb17ed87a6bce68daee6ea8055869b164ea0fbc63acf1e08ceb59f"
+  },
+  {
+   "path": "slicer-mt.js",
+   "size": 150468,
+   "sha256": "98b88825dabbb292a2af2f4c7e27a01b71d1d040481f262ebe55a1cf22f3443c"
+  },
+  {
+   "path": "slicer-mt.wasm",
+   "size": 29019444,
+   "sha256": "34614074e543bf51ca923606279673efaf8b628f80b513b96cb51c923ed574b0"
+  }
+ ]
+}
