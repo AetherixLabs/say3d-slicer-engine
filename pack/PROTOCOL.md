@@ -36,9 +36,9 @@ The page posts plain objects:
 |---|---|---|
 | `input` | string | Path to `GET` the binary STL from (mm, Z up) |
 | `output` | string | Path to `POST` the G-code to |
-| `printer` | string | `a1`, `a1mini`, `p1s`, `p1p`, `x1`, `x1c`, `x1e` (`catalog.json`) |
+| `printer` | string | The ids in `catalog.json`, such as `a1`, `h2d`, `mk4s`, `k1c`, `centauri` |
 | `material` | string | `pla`, `petg`, `petg-hf`, `pla-silk`, `abs`, `asa`, `tpu` |
-| `plate` | string | `Cool Plate`, `Engineering Plate`, `High Temp Plate`, `Textured PEI Plate` |
+| `plate` | string? | `Cool Plate`, `Engineering Plate`, `High Temp Plate`, `Textured PEI Plate`; other makers' printers default to `High Temp Plate` |
 | `layerHeight` | number | mm; the process nearest it is used, set to it |
 | `firstLayerHeight` | number? | mm; never below `layerHeight` |
 | `supports` | string | `off`, `tree` or `normal` |
@@ -54,7 +54,7 @@ The page posts plain objects:
 
 A host checks `protocol` in `pack.json` before sending version 2 fields: a version 1 pack ignores them.
 
-The model is stood in the middle of the bed, on it. The G-code always uses relative extrusion (`M83`), as Bambu's start G-code does.
+The model is stood in the middle of the bed, on it. Bambu G-code always uses relative extrusion (`M83`), as its start G-code does; other makers' printers keep what their profile says, relative if it says nothing.
 
 ## The answer
 
