@@ -1,0 +1,455 @@
+{
+ "engine": "OrcaSlicer 2.4.2 (OrcaWasm)",
+ "printers": {
+  "a1": {
+   "bedCentre": [
+    128.0,
+    128.0
+   ],
+   "filaments": {
+    "abs": "profiles/a1/filament-abs.json",
+    "asa": "profiles/a1/filament-asa.json",
+    "petg": "profiles/a1/filament-petg.json",
+    "petg-hf": "profiles/a1/filament-petg-hf.json",
+    "pla": "profiles/a1/filament-pla.json",
+    "pla-silk": "profiles/a1/filament-pla-silk.json",
+    "tpu": "profiles/a1/filament-tpu.json"
+   },
+   "machine": "profiles/a1/machine.json",
+   "name": "Bambu Lab A1 0.4 nozzle",
+   "processes": {
+    "0.08": "profiles/a1/process-0.08.json",
+    "0.12": "profiles/a1/process-0.12.json",
+    "0.16": "profiles/a1/process-0.16.json",
+    "0.20": "profiles/a1/process-0.20.json",
+    "0.24": "profiles/a1/process-0.24.json",
+    "0.28": "profiles/a1/process-0.28.json"
+   }
+  },
+  "a1mini": {
+   "bedCentre": [
+    90.0,
+    90.0
+   ],
+   "filaments": {
+    "petg": "profiles/a1mini/filament-petg.json",
+    "petg-hf": "profiles/a1mini/filament-petg-hf.json",
+    "pla": "profiles/a1mini/filament-pla.json",
+    "pla-silk": "profiles/a1mini/filament-pla-silk.json",
+    "tpu": "profiles/a1mini/filament-tpu.json"
+   },
+   "machine": "profiles/a1mini/machine.json",
+   "name": "Bambu Lab A1 mini 0.4 nozzle",
+   "processes": {
+    "0.08": "profiles/a1mini/process-0.08.json",
+    "0.12": "profiles/a1mini/process-0.12.json",
+    "0.16": "profiles/a1mini/process-0.16.json",
+    "0.20": "profiles/a1mini/process-0.20.json",
+    "0.24": "profiles/a1mini/process-0.24.json",
+    "0.28": "profiles/a1mini/process-0.28.json"
+   }
+  },
+  "centauri": {
+   "bedCentre": [
+    128.0,
+    128.0
+   ],
+   "filaments": {
+    "abs": "profiles/centauri/filament-abs.json",
+    "petg": "profiles/centauri/filament-petg.json",
+    "pla": "profiles/centauri/filament-pla.json"
+   },
+   "machine": "profiles/centauri/machine.json",
+   "name": "Elegoo Centauri Carbon 0.4 nozzle",
+   "processes": {
+    "0.12": "profiles/centauri/process-0.12.json",
+    "0.16": "profiles/centauri/process-0.16.json",
+    "0.20": "profiles/centauri/process-0.20.json",
+    "0.24": "profiles/centauri/process-0.24.json",
+    "0.28": "profiles/centauri/process-0.28.json"
+   }
+  },
+  "coreone": {
+   "bedCentre": [
+    125.0,
+    110.0
+   ],
+   "filaments": {
+    "abs": "profiles/coreone/filament-abs.json",
+    "asa": "profiles/coreone/filament-asa.json",
+    "petg": "profiles/coreone/filament-petg.json",
+    "pla": "profiles/coreone/filament-pla.json"
+   },
+   "machine": "profiles/coreone/machine.json",
+   "name": "Prusa CORE One 0.4 nozzle",
+   "processes": {
+    "0.10": "profiles/coreone/process-0.10.json",
+    "0.15": "profiles/coreone/process-0.15.json",
+    "0.20": "profiles/coreone/process-0.20.json"
+   }
+  },
+  "ender3v3": {
+   "bedCentre": [
+    110.0,
+    110.0
+   ],
+   "filaments": {
+    "abs": "profiles/ender3v3/filament-abs.json",
+    "asa": "profiles/ender3v3/filament-asa.json",
+    "petg": "profiles/ender3v3/filament-petg.json",
+    "pla": "profiles/ender3v3/filament-pla.json",
+    "tpu": "profiles/ender3v3/filament-tpu.json"
+   },
+   "machine": "profiles/ender3v3/machine.json",
+   "name": "Creality Ender-3 V3 0.4 nozzle",
+   "processes": {
+    "0.12": "profiles/ender3v3/process-0.12.json",
+    "0.16": "profiles/ender3v3/process-0.16.json",
+    "0.20": "profiles/ender3v3/process-0.20.json",
+    "0.24": "profiles/ender3v3/process-0.24.json"
+   }
+  },
+  "h2d": {
+   "bedCentre": [
+    175.0,
+    160.0
+   ],
+   "filaments": {
+    "abs": "profiles/h2d/filament-abs.json",
+    "asa": "profiles/h2d/filament-asa.json",
+    "petg": "profiles/h2d/filament-petg.json",
+    "petg-hf": "profiles/h2d/filament-petg-hf.json",
+    "pla": "profiles/h2d/filament-pla.json",
+    "pla-silk": "profiles/h2d/filament-pla-silk.json",
+    "tpu": "profiles/h2d/filament-tpu.json"
+   },
+   "machine": "profiles/h2d/machine.json",
+   "name": "Bambu Lab H2D 0.4 nozzle",
+   "processes": {
+    "0.08": "profiles/h2d/process-0.08.json",
+    "0.12": "profiles/h2d/process-0.12.json",
+    "0.16": "profiles/h2d/process-0.16.json",
+    "0.20": "profiles/h2d/process-0.20.json",
+    "0.24": "profiles/h2d/process-0.24.json"
+   }
+  },
+  "k1": {
+   "bedCentre": [
+    110.0,
+    110.0
+   ],
+   "filaments": {
+    "abs": "profiles/k1/filament-abs.json",
+    "asa": "profiles/k1/filament-asa.json",
+    "petg": "profiles/k1/filament-petg.json",
+    "pla": "profiles/k1/filament-pla.json",
+    "tpu": "profiles/k1/filament-tpu.json"
+   },
+   "machine": "profiles/k1/machine.json",
+   "name": "Creality K1 (0.4 nozzle)",
+   "processes": {
+    "0.08": "profiles/k1/process-0.08.json",
+    "0.12": "profiles/k1/process-0.12.json",
+    "0.16": "profiles/k1/process-0.16.json",
+    "0.20": "profiles/k1/process-0.20.json",
+    "0.24": "profiles/k1/process-0.24.json"
+   }
+  },
+  "k1c": {
+   "bedCentre": [
+    110.0,
+    110.0
+   ],
+   "filaments": {
+    "abs": "profiles/k1c/filament-abs.json",
+    "asa": "profiles/k1c/filament-asa.json",
+    "petg": "profiles/k1c/filament-petg.json",
+    "pla": "profiles/k1c/filament-pla.json",
+    "tpu": "profiles/k1c/filament-tpu.json"
+   },
+   "machine": "profiles/k1c/machine.json",
+   "name": "Creality K1C 0.4 nozzle",
+   "processes": {
+    "0.08": "profiles/k1c/process-0.08.json",
+    "0.12": "profiles/k1c/process-0.12.json",
+    "0.16": "profiles/k1c/process-0.16.json",
+    "0.20": "profiles/k1c/process-0.20.json",
+    "0.24": "profiles/k1c/process-0.24.json"
+   }
+  },
+  "k1max": {
+   "bedCentre": [
+    150.0,
+    150.0
+   ],
+   "filaments": {
+    "abs": "profiles/k1max/filament-abs.json",
+    "asa": "profiles/k1max/filament-asa.json",
+    "petg": "profiles/k1max/filament-petg.json",
+    "pla": "profiles/k1max/filament-pla.json",
+    "tpu": "profiles/k1max/filament-tpu.json"
+   },
+   "machine": "profiles/k1max/machine.json",
+   "name": "Creality K1 Max (0.4 nozzle)",
+   "processes": {
+    "0.08": "profiles/k1max/process-0.08.json",
+    "0.12": "profiles/k1max/process-0.12.json",
+    "0.16": "profiles/k1max/process-0.16.json",
+    "0.20": "profiles/k1max/process-0.20.json",
+    "0.24": "profiles/k1max/process-0.24.json"
+   }
+  },
+  "k2plus": {
+   "bedCentre": [
+    175.0,
+    175.0
+   ],
+   "filaments": {
+    "abs": "profiles/k2plus/filament-abs.json",
+    "asa": "profiles/k2plus/filament-asa.json",
+    "petg": "profiles/k2plus/filament-petg.json",
+    "pla": "profiles/k2plus/filament-pla.json",
+    "tpu": "profiles/k2plus/filament-tpu.json"
+   },
+   "machine": "profiles/k2plus/machine.json",
+   "name": "Creality K2 Plus 0.4 nozzle",
+   "processes": {
+    "0.08": "profiles/k2plus/process-0.08.json",
+    "0.12": "profiles/k2plus/process-0.12.json",
+    "0.16": "profiles/k2plus/process-0.16.json",
+    "0.20": "profiles/k2plus/process-0.20.json",
+    "0.24": "profiles/k2plus/process-0.24.json",
+    "0.28": "profiles/k2plus/process-0.28.json"
+   }
+  },
+  "miniis": {
+   "bedCentre": [
+    90.0,
+    90.0
+   ],
+   "filaments": {
+    "abs": "profiles/miniis/filament-abs.json",
+    "asa": "profiles/miniis/filament-asa.json",
+    "petg": "profiles/miniis/filament-petg.json",
+    "pla": "profiles/miniis/filament-pla.json"
+   },
+   "machine": "profiles/miniis/machine.json",
+   "name": "Prusa MINIIS 0.4 nozzle",
+   "processes": {
+    "0.10": "profiles/miniis/process-0.10.json",
+    "0.15": "profiles/miniis/process-0.15.json",
+    "0.20": "profiles/miniis/process-0.20.json"
+   }
+  },
+  "mk4": {
+   "bedCentre": [
+    125.0,
+    105.0
+   ],
+   "filaments": {
+    "abs": "profiles/mk4/filament-abs.json",
+    "asa": "profiles/mk4/filament-asa.json",
+    "petg": "profiles/mk4/filament-petg.json",
+    "pla": "profiles/mk4/filament-pla.json",
+    "tpu": "profiles/mk4/filament-tpu.json"
+   },
+   "machine": "profiles/mk4/machine.json",
+   "name": "Prusa MK4 0.4 nozzle",
+   "processes": {
+    "0.08": "profiles/mk4/process-0.08.json",
+    "0.12": "profiles/mk4/process-0.12.json",
+    "0.16": "profiles/mk4/process-0.16.json",
+    "0.20": "profiles/mk4/process-0.20.json",
+    "0.24": "profiles/mk4/process-0.24.json",
+    "0.28": "profiles/mk4/process-0.28.json"
+   }
+  },
+  "mk4s": {
+   "bedCentre": [
+    125.0,
+    105.0
+   ],
+   "filaments": {
+    "abs": "profiles/mk4s/filament-abs.json",
+    "asa": "profiles/mk4s/filament-asa.json",
+    "petg": "profiles/mk4s/filament-petg.json",
+    "pla": "profiles/mk4s/filament-pla.json"
+   },
+   "machine": "profiles/mk4s/machine.json",
+   "name": "Prusa MK4S 0.4 nozzle",
+   "processes": {
+    "0.10": "profiles/mk4s/process-0.10.json",
+    "0.15": "profiles/mk4s/process-0.15.json",
+    "0.20": "profiles/mk4s/process-0.20.json"
+   }
+  },
+  "neptune4": {
+   "bedCentre": [
+    115.0,
+    115.0
+   ],
+   "filaments": {
+    "abs": "profiles/neptune4/filament-abs.json",
+    "asa": "profiles/neptune4/filament-asa.json",
+    "petg": "profiles/neptune4/filament-petg.json",
+    "pla": "profiles/neptune4/filament-pla.json"
+   },
+   "machine": "profiles/neptune4/machine.json",
+   "name": "Elegoo Neptune 4 0.4 nozzle",
+   "processes": {
+    "0.12": "profiles/neptune4/process-0.12.json",
+    "0.16": "profiles/neptune4/process-0.16.json",
+    "0.20": "profiles/neptune4/process-0.20.json",
+    "0.24": "profiles/neptune4/process-0.24.json",
+    "0.28": "profiles/neptune4/process-0.28.json"
+   }
+  },
+  "neptune4pro": {
+   "bedCentre": [
+    115.0,
+    115.0
+   ],
+   "filaments": {
+    "abs": "profiles/neptune4pro/filament-abs.json",
+    "asa": "profiles/neptune4pro/filament-asa.json",
+    "petg": "profiles/neptune4pro/filament-petg.json",
+    "pla": "profiles/neptune4pro/filament-pla.json"
+   },
+   "machine": "profiles/neptune4pro/machine.json",
+   "name": "Elegoo Neptune 4 Pro 0.4 nozzle",
+   "processes": {
+    "0.12": "profiles/neptune4pro/process-0.12.json",
+    "0.16": "profiles/neptune4pro/process-0.16.json",
+    "0.20": "profiles/neptune4pro/process-0.20.json",
+    "0.24": "profiles/neptune4pro/process-0.24.json",
+    "0.28": "profiles/neptune4pro/process-0.28.json"
+   }
+  },
+  "p1p": {
+   "bedCentre": [
+    128.0,
+    128.0
+   ],
+   "filaments": {
+    "abs": "profiles/p1p/filament-abs.json",
+    "asa": "profiles/p1p/filament-asa.json",
+    "petg": "profiles/p1p/filament-petg.json",
+    "petg-hf": "profiles/p1p/filament-petg-hf.json",
+    "pla": "profiles/p1p/filament-pla.json",
+    "pla-silk": "profiles/p1p/filament-pla-silk.json",
+    "tpu": "profiles/p1p/filament-tpu.json"
+   },
+   "machine": "profiles/p1p/machine.json",
+   "name": "Bambu Lab P1P 0.4 nozzle",
+   "processes": {
+    "0.08": "profiles/p1p/process-0.08.json",
+    "0.12": "profiles/p1p/process-0.12.json",
+    "0.16": "profiles/p1p/process-0.16.json",
+    "0.20": "profiles/p1p/process-0.20.json",
+    "0.24": "profiles/p1p/process-0.24.json",
+    "0.28": "profiles/p1p/process-0.28.json"
+   }
+  },
+  "p1s": {
+   "bedCentre": [
+    128.0,
+    128.0
+   ],
+   "filaments": {
+    "abs": "profiles/p1s/filament-abs.json",
+    "asa": "profiles/p1s/filament-asa.json",
+    "petg": "profiles/p1s/filament-petg.json",
+    "petg-hf": "profiles/p1s/filament-petg-hf.json",
+    "pla": "profiles/p1s/filament-pla.json",
+    "pla-silk": "profiles/p1s/filament-pla-silk.json",
+    "tpu": "profiles/p1s/filament-tpu.json"
+   },
+   "machine": "profiles/p1s/machine.json",
+   "name": "Bambu Lab P1S 0.4 nozzle",
+   "processes": {
+    "0.08": "profiles/p1s/process-0.08.json",
+    "0.12": "profiles/p1s/process-0.12.json",
+    "0.16": "profiles/p1s/process-0.16.json",
+    "0.20": "profiles/p1s/process-0.20.json",
+    "0.24": "profiles/p1s/process-0.24.json",
+    "0.28": "profiles/p1s/process-0.28.json"
+   }
+  },
+  "x1": {
+   "bedCentre": [
+    128.0,
+    128.0
+   ],
+   "filaments": {
+    "abs": "profiles/x1/filament-abs.json",
+    "asa": "profiles/x1/filament-asa.json",
+    "petg": "profiles/x1/filament-petg.json",
+    "petg-hf": "profiles/x1/filament-petg-hf.json",
+    "pla": "profiles/x1/filament-pla.json",
+    "pla-silk": "profiles/x1/filament-pla-silk.json",
+    "tpu": "profiles/x1/filament-tpu.json"
+   },
+   "machine": "profiles/x1/machine.json",
+   "name": "Bambu Lab X1 0.4 nozzle",
+   "processes": {
+    "0.08": "profiles/x1/process-0.08.json",
+    "0.12": "profiles/x1/process-0.12.json",
+    "0.16": "profiles/x1/process-0.16.json",
+    "0.20": "profiles/x1/process-0.20.json",
+    "0.24": "profiles/x1/process-0.24.json",
+    "0.28": "profiles/x1/process-0.28.json"
+   }
+  },
+  "x1c": {
+   "bedCentre": [
+    128.0,
+    128.0
+   ],
+   "filaments": {
+    "abs": "profiles/x1c/filament-abs.json",
+    "asa": "profiles/x1c/filament-asa.json",
+    "petg": "profiles/x1c/filament-petg.json",
+    "petg-hf": "profiles/x1c/filament-petg-hf.json",
+    "pla": "profiles/x1c/filament-pla.json",
+    "pla-silk": "profiles/x1c/filament-pla-silk.json",
+    "tpu": "profiles/x1c/filament-tpu.json"
+   },
+   "machine": "profiles/x1c/machine.json",
+   "name": "Bambu Lab X1 Carbon 0.4 nozzle",
+   "processes": {
+    "0.08": "profiles/x1c/process-0.08.json",
+    "0.12": "profiles/x1c/process-0.12.json",
+    "0.16": "profiles/x1c/process-0.16.json",
+    "0.20": "profiles/x1c/process-0.20.json",
+    "0.24": "profiles/x1c/process-0.24.json",
+    "0.28": "profiles/x1c/process-0.28.json"
+   }
+  },
+  "x1e": {
+   "bedCentre": [
+    128.0,
+    128.0
+   ],
+   "filaments": {
+    "abs": "profiles/x1e/filament-abs.json",
+    "asa": "profiles/x1e/filament-asa.json",
+    "petg": "profiles/x1e/filament-petg.json",
+    "petg-hf": "profiles/x1e/filament-petg-hf.json",
+    "pla": "profiles/x1e/filament-pla.json",
+    "pla-silk": "profiles/x1e/filament-pla-silk.json",
+    "tpu": "profiles/x1e/filament-tpu.json"
+   },
+   "machine": "profiles/x1e/machine.json",
+   "name": "Bambu Lab X1E 0.4 nozzle",
+   "processes": {
+    "0.08": "profiles/x1e/process-0.08.json",
+    "0.12": "profiles/x1e/process-0.12.json",
+    "0.16": "profiles/x1e/process-0.16.json",
+    "0.20": "profiles/x1e/process-0.20.json",
+    "0.24": "profiles/x1e/process-0.24.json",
+    "0.28": "profiles/x1e/process-0.28.json"
+   }
+  }
+ },
+ "version": "0.3.1"
+}
